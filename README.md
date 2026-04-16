@@ -5,6 +5,35 @@
 [![React 18](https://img.shields.io/badge/React-18-61DAFB.svg)](https://reactjs.org/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.0.26-orange.svg)](https://github.com/langchain-ai/langgraph)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Paper](https://img.shields.io/badge/Paper-Zenodo_DOI-blue)](https://doi.org/10.5281/zenodo.19582347)
+[![ResearchGate](https://img.shields.io/badge/ResearchGate-Publication-00CCBB)](https://www.researchgate.net/publication/403818727)
+
+> 📄 **Published Research:** This repository is part of the **UniLLMOps** framework described in:
+>
+> *UniLLMOps: A Unified Framework for End-to-End Large Language Model Production Systems — From Distributed Fine-Tuning to Hybrid Retrieval-Augmented Inference*
+>
+> Tanay Tammineni, 2026 — [Paper (DOI)](https://doi.org/10.5281/zenodo.19582347) | [ResearchGate](https://www.researchgate.net/publication/403818727)
+
+### 50-Query Controlled Validation Results
+
+| Metric | Value |
+|--------|-------|
+| CRAG pass-through rate | 62% (31/50 queries) |
+| CRAG correction rate | 38% (19/50 queries) |
+| Mean retrieval latency | 163.5 ms |
+| Mean total latency (proceed) | 55.9 s |
+| Mean total latency (corrected) | 86.9 s |
+| Dense retriever contribution | 42.7% |
+| Sparse (BM25) contribution | 44.4% |
+| Graph (Neo4j) contribution | 12.9% |
+| Mean sources per query | 3.4 |
+| Hybrid vs dense-only coverage | 100% vs 68% |
+
+**LLM:** Ollama Llama 3.2 3B (local, no API costs) | **Embedding:** all-MiniLM-L6-v2 (384-dim) | **Corpus:** 5 papers, 783 chunks, 57 graph entities
+
+Full per-query data: [`eval_results_50.json`](eval_results_50.json)
+
+---
 
 A production-grade Retrieval Augmented Generation system that goes beyond basic "chat with your PDFs." It combines three search strategies (dense embeddings, BM25 sparse search, knowledge graph traversal), implements Corrective RAG (CRAG) for self-healing retrieval, and continuously learns from user feedback through a reward-based re-ranking loop — with a real-time evaluation dashboard tracking faithfulness, relevance, and precision metrics.
 
@@ -224,6 +253,7 @@ hybrid-rag-system/
 │   └── ARCHITECTURE.md              # Detailed system design documentation
 ├── configs/                          # Retrieval tuning configs
 ├── data/sample_papers/               # Place documents here for ingestion
+├── eval_results_50.json              # 50-query validation results (paper Section X)
 ├── docker-compose.yml                # Qdrant + Elasticsearch + Neo4j + PostgreSQL
 ├── .env.example                      # Required environment variables
 └── README.md
@@ -335,6 +365,26 @@ Tests use mocked backends (no Qdrant/Elasticsearch/Neo4j required):
 
 ---
 
+## Citation
+
+If you use this work in your research, please cite:
+
+```bibtex
+@misc{tammineni2026unillmops,
+  title={UniLLMOps: A Unified Framework for End-to-End Large Language Model Production Systems -- From Distributed Fine-Tuning to Hybrid Retrieval-Augmented Inference},
+  author={Tammineni, Tanay},
+  year={2026},
+  doi={10.5281/zenodo.19582347},
+  url={https://doi.org/10.5281/zenodo.19582347}
+}
+```
+
+## Related Repository
+
+- [Distributed Fine-Tuning Pipeline](https://github.com/TammineniTanay/distributed-finetune-pipeline) — QLoRA + DeepSpeed ZeRO-3 + model merging + DPO alignment
+
+---
+
 ## Future Roadmap
 
 - [ ] Streaming responses via WebSocket
@@ -363,4 +413,4 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
-Built by [Tanay Tammineni](https://tanaytammineni.vercel.app) | [GitHub](https://github.com/TammineniTanay) | [LinkedIn](https://linkedin.com/in/tanay-tammineni-ba6a9918b)
+Built by [Tanay Tammineni](https://tanaytammineni.vercel.app) | [GitHub](https://github.com/TammineniTanay) | [LinkedIn](https://linkedin.com/in/tanay-tammineni)

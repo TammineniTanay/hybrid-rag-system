@@ -1,0 +1,1849 @@
+[
+  {
+    "query_id": "6337eaa9-d935-40bf-b4b2-d4c4987d910e",
+    "question": "What is the transformer architecture?",
+    "answer": "According to [Source 1, Source 2, Source 4, and Source 5], the Transformer architecture consists of stacked self-attention and point-wise, fully connected layers for both the encoder and decoder.\n\nThe specific details are as follows:\n\n* The encoder is composed of a stack of N = 6 identical layers.\n* Each layer has two sub-layers:\n\t1. A multi-head self-attention mechanism\n\t2. A simple, position-wise, fully connected layer\n\nThis architecture is described in Figure 1 and Section 3.1 of the provided sources.\n\n[Source 1], [Source 2], [Source 4], and [Source 5] all provide the same information about the Transformer architecture, confirming that this is the correct answer.",
+    "sources": [
+      {
+        "chunk_id": "b40a13b4-e8ea-4030-bd42-4012241b453f",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0017",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-79439813",
+        "content_preview": "Entity: Ashish Vaswani\n  \u2192 AUTHORED \u2192 Paper: Attention Is All You Need\n  \u2192 AUTHORED \u2192 Author: Noam Shazeer\n  \u2192 AUTHORED \u2192 Author: Niki Parmar\n  \u2192 AUTHORED \u2192 Author: Jakob Uszkoreit\n  \u2192 AUTHORED \u2192 Auth",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "a1fdb590-5155-49e4-9d17-cb4160c084cf",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0017",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 157.2,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 50644.1,
+    "timestamp": "2026-04-13T00:10:11.156575",
+    "latency_s": 52.78
+  },
+  {
+    "query_id": "83de66f7-e332-4f93-a4e1-353a72c6ba05",
+    "question": "How does scaled dot-product attention work in the Transformer?",
+    "answer": "According to [Source 1: 1706.03762v7.pdf], Scaled Dot-Product Attention is a mechanism used in the Transformer model. It works by computing the weight assigned to each value based on the compatibility function of the query with the corresponding key.\n\nIn more detail, the process can be broken down into two main steps:\n\n1. The query and key values are computed.\n2. The weights for the attention scores are computed using a compatibility function (also known as a dot product) between the query and key values.\n\nThe output is then computed by taking a weighted sum of the value vectors, where the weights are determined by the attention scores.\n\n[Source 1: 1706.03762v7.pdf]\n\nAdditionally, [Source 2: knowledge_graph] mentions that Scaled Dot-Product Attention is used in the Transformer model, which was introduced in the paper \"Attention Is All You Need\" by Ashish Vaswani et al.",
+    "sources": [
+      {
+        "chunk_id": "7957415e-f65-0021",
+        "content_preview": "Scaled Dot-Product Attention\n Multi-Head Attention\nFigure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several\nattention layers running in parallel.\nof the values, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-20978719",
+        "content_preview": "Entity: attention mechanisms\n  \u2192 USES_METHOD \u2192 Paper: Attention Is All You Need\n  \u2192 USES_METHOD \u2192 Author: Ashish Vaswani\n  \u2192 USES_METHOD \u2192 Author: Noam Shazeer\n  \u2192 USES_METHOD \u2192 Author: Niki Parmar\n  ",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0021",
+        "content_preview": "Scaled Dot-Product Attention\n Multi-Head Attention\nFigure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several\nattention layers running in parallel.\nof the values, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 275.9,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 49984.7,
+    "timestamp": "2026-04-13T00:11:03.225287",
+    "latency_s": 52.07
+  },
+  {
+    "query_id": "0c69ad0d-1f02-4426-80db-8fe3bb14319b",
+    "question": "What is multi-head attention and how many heads does the Transformer use?",
+    "answer": "According to the provided context, multi-head attention refers to a technique used by the Transformer where the input is split into multiple subspaces (or \"heads\") and each head processes the input independently. The number of heads used in this work is 8, as stated in the following sentence:\n\n\"In this work we employ h = 8 parallel attention layers, or heads.\"\n\n[Source N: 1706.03762v7.pdf]",
+    "sources": [
+      {
+        "chunk_id": "ccbaaf2f-9a4b-4173-b46f-2203cc228fba",
+        "content_preview": "i \u2208 Rdmodel\u00d7dk, W K\ni \u2208 Rdmodel\u00d7dk, W V\ni \u2208 Rdmodel\u00d7dv\nand W O \u2208 Rhdv\u00d7dmodel.\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0028",
+        "content_preview": "i \u2208 Rdmodel\u00d7dk, W K\ni \u2208 Rdmodel\u00d7dk, W V\ni \u2208 Rdmodel\u00d7dv\nand W O \u2208 Rhdv\u00d7dmodel.\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "0412042c-e29b-4524-8838-de650403b033",
+        "content_preview": "i \u2208 Rdmodel\u00d7dk, W K\ni \u2208 Rdmodel\u00d7dk, W V\ni \u2208 Rdmodel\u00d7dv\nand W O \u2208 Rhdv\u00d7dmodel.\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0028",
+        "content_preview": "i \u2208 Rdmodel\u00d7dk, W K\ni \u2208 Rdmodel\u00d7dk, W V\ni \u2208 Rdmodel\u00d7dv\nand W O \u2208 Rhdv\u00d7dmodel.\nIn this work we employ h = 8 parallel attention layers, or heads. For each of these we use\ndk = dv = dmodel/h = 64. Due to",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 193.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 44403.2,
+    "timestamp": "2026-04-13T00:11:49.705799",
+    "latency_s": 46.48
+  },
+  {
+    "query_id": "81fd8a60-8531-4736-84c5-b0424f8a4539",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German?",
+    "answer": "Unfortunately, I couldn't find any information about the Transformer's performance on the WMT 2014 English-to-German translation task in the provided context. The text only mentions the performance of the big model on the English-to-French task and provides some details about the base models.\n\nHowever, according to [Source 1: 1706.03762v7.pdf], the Transformer (big) model achieved a BLEU score of 41.0 on the WMT 2014 English-to-French translation task.",
+    "sources": [
+      {
+        "chunk_id": "2a9d75cc-61b6-478d-b48d-f718377752a9",
+        "content_preview": "the competitive models.\nOn the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,\noutperforming all of the previously published single models, at less than 1/4 t",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0052",
+        "content_preview": "positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of\nPdrop = 0.1.\nLabel Smoothing During training, we employed label smoothing of value \u03f5ls = 0 .1 [36]. Th",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-59852456",
+        "content_preview": "Entity: decompose-then-recompose algorithm\n  \u2192 USES_METHOD \u2192 Paper: Corrective Retrieval Augmented Generation\n  \u2192 USES_METHOD \u2192 Author: Shi-Qi Yan\n  \u2192 USES_METHOD \u2192 Author: Jia-Chen Gu\n  \u2192 USES_METHOD",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "8a918adb-8792-4ae7-93c4-342aa27da468",
+        "content_preview": "the competitive models.\nOn the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,\noutperforming all of the previously published single models, at less than 1/4 t",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0052",
+        "content_preview": "positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of\nPdrop = 0.1.\nLabel Smoothing During training, we employed label smoothing of value \u03f5ls = 0 .1 [36]. Th",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 189.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 92824.4,
+    "timestamp": "2026-04-13T00:13:24.600035",
+    "latency_s": 94.9
+  },
+  {
+    "query_id": "6f0a861b-f77b-40c6-9cb1-e64c73821e30",
+    "question": "How does the Transformer use positional encoding?",
+    "answer": "According to Source 1, Figure 1, and Source 5, the Transformer uses sinusoidal positional encoding in its original architecture [Source 1]. However, an alternative approach is also mentioned, where learned positional embeddings are used instead of sinusoidal positional encoding, which results in nearly identical performance to the base model [Source 5].",
+    "sources": [
+      {
+        "chunk_id": "b40a13b4-e8ea-4030-bd42-4012241b453f",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0061",
+        "content_preview": "suggests that determining compatibility is not easy and that a more sophisticated compatibility\nfunction than dot product may be beneficial. We further observe in rows (C) and (D) that, as expected,\nb",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "a1fdb590-5155-49e4-9d17-cb4160c084cf",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0061",
+        "content_preview": "suggests that determining compatibility is not easy and that a more sophisticated compatibility\nfunction than dot product may be beneficial. We further observe in rows (C) and (D) that, as expected,\nb",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 137.6,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 83865.6,
+    "timestamp": "2026-04-13T00:14:50.538725",
+    "latency_s": 85.94
+  },
+  {
+    "query_id": "d09d065b-0260-4d79-a276-7b8add46271b",
+    "question": "What regularization techniques does the Transformer use during training?",
+    "answer": "According to [Source 2: 1706.03762v7.pdf], the Transformer uses three types of regularization during training:\n\n1. Warmup steps (set to 4000)\n2. Three types of regularization are mentioned, but only one type is explicitly stated as being used:\n   Regularization techniques are not fully specified in [Source 2]. However, [Source 5: 1706.03762v7.pdf] mentions that the paper employs three types of regularization during training, which are not further detailed.\n\nHowever, according to [Source 1], no specific regularization techniques are mentioned for the Transformer.\n\nBut, it is stated in [Source 4: 1810.04805v2.pdf] that the feature-based approach has certain advantages, including major computational benefits to pre-compute an expensive representation of the training data once and then run many experiments.",
+    "sources": [
+      {
+        "chunk_id": "57dc54d4-fa29-4476-976b-d76da1664c62",
+        "content_preview": "et al., 2018a), uses task-speci\ufb01c architectures that\ninclude the pre-trained representations as addi-\ntional features. The \ufb01ne-tuning approach, such as\nthe Generative Pre-trained Transformer (OpenAI\nG",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0049",
+        "content_preview": "warmup_steps = 4000.\n5.4 Regularization\nWe employ three types of regularization during training:\n7",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "69d558e1-2177-4e42-9004-ff8089a96dfc",
+        "content_preview": "all parameters are jointly \ufb01ne-tuned on a down-\nstream task. However, the feature-based approach,\nwhere \ufb01xed features are extracted from the pre-\ntrained model, has certain advantages. First, not\nall ",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0049",
+        "content_preview": "warmup_steps = 4000.\n5.4 Regularization\nWe employ three types of regularization during training:\n7",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 138.2,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 77169.1,
+    "timestamp": "2026-04-13T00:16:09.802393",
+    "latency_s": 79.27
+  },
+  {
+    "query_id": "58babe75-2d14-46dd-a053-0ca4dac2e898",
+    "question": "How does self-attention complexity compare to recurrent layer complexity?",
+    "answer": "According to the provided context from [Source 1], [Source 2], [Source 3], and [Source 4], which all cite the same Table 1, self-attention layers are faster than recurrent layers when it comes to computational complexity. The exact comparison is not specified in terms of a numerical value, but rather that self-attention layers have a \"constant number of sequentially executed operations\", whereas recurrent layers require O(n) sequential operations.\n\nIn other words, the complexity of self-attention layers is constant and does not grow with the size of the input sequence, whereas the complexity of recurrent layers grows linearly with the size of the input sequence (O(n)).",
+    "sources": [
+      {
+        "chunk_id": "55a02ed2-b566-4939-b061-2931b9f1b8c8",
+        "content_preview": "different layer types.\nAs noted in Table 1, a self-attention layer connects all positions with a constant number of sequentially\nexecuted operations, whereas a recurrent layer requires O(n) sequential",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0041",
+        "content_preview": "different layer types.\nAs noted in Table 1, a self-attention layer connects all positions with a constant number of sequentially\nexecuted operations, whereas a recurrent layer requires O(n) sequential",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "fdfddd89-bdfa-4274-a736-a04b29b653da",
+        "content_preview": "different layer types.\nAs noted in Table 1, a self-attention layer connects all positions with a constant number of sequentially\nexecuted operations, whereas a recurrent layer requires O(n) sequential",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0041",
+        "content_preview": "different layer types.\nAs noted in Table 1, a self-attention layer connects all positions with a constant number of sequentially\nexecuted operations, whereas a recurrent layer requires O(n) sequential",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 154.1,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 35078.8,
+    "timestamp": "2026-04-13T00:16:46.943679",
+    "latency_s": 37.14
+  },
+  {
+    "query_id": "0d560093-4b8d-49c6-a59c-0af5e6d4c0c7",
+    "question": "What is the feed-forward network structure in each Transformer layer?",
+    "answer": "According to [Source 1 and Source 4], the feed-forward network structure in each Transformer layer consists of two sub-layers:\n\n1. A multi-head self-attention mechanism\n2. A simple, position-wise fully connected feed-forward network.\n\nBoth sub-layers employ a residual connection around them, followed by layer normalization.",
+    "sources": [
+      {
+        "chunk_id": "b40a13b4-e8ea-4030-bd42-4012241b453f",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7957415e-f65-0018",
+        "content_preview": "wise fully connected feed-forward network. We employ a residual connection [11] around each of\nthe two sub-layers, followed by layer normalization [ 1]. That is, the output of each sub-layer is\nLayerN",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "a1fdb590-5155-49e4-9d17-cb4160c084cf",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "03c4e8aa-7b0-0018",
+        "content_preview": "wise fully connected feed-forward network. We employ a residual connection [11] around each of\nthe two sub-layers, followed by layer normalization [ 1]. That is, the output of each sub-layer is\nLayerN",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 182.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 54943.3,
+    "timestamp": "2026-04-13T00:17:43.963169",
+    "latency_s": 57.02
+  },
+  {
+    "query_id": "216d567b-26f8-4e78-81d5-91da4cd14a1c",
+    "question": "How long did it take to train the big Transformer model?",
+    "answer": "According to [Source 5: 1706.03762v7.pdf], the best models from the literature were trained for a significant amount of time, but the exact duration is not specified in this particular source.\n\nHowever, another source mentions that the authors of [Source 5] trained their model for 3.5 days on eight GPUs, which resulted in a new single-model state-of-the-art BLEU score of 41.8.",
+    "sources": [
+      {
+        "chunk_id": "9db077b4-2284-4385-a72b-6c36d2ddafca",
+        "content_preview": "plementation is almost identical to the original,\nwe will omit an exhaustive background descrip-\ntion of the model architecture and refer readers to\nVaswani et al. (2017) as well as excellent guides\ns",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0011",
+        "content_preview": "\u2022 We show that pre-trained representations reduce\nthe need for many heavily-engineered task-\nspeci\ufb01c architectures. BERT is the \ufb01rst \ufb01ne-\ntuning based representation model that achieves\nstate-of-the-a",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "a9044420-16fd-44d7-90e1-b698ad763cc8",
+        "content_preview": "[66] Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony\nMoi, Pierric Cistac, Tim Rault, R\u00e9mi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer,\nPatrick von Platen, Cl",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "7957415e-f65-0003",
+        "content_preview": "our model establishes a new single-model state-of-the-art BLEU score of 41.8 after\ntraining for 3.5 days on eight GPUs, a small fraction of the training costs of the\nbest models from the literature. W",
+        "source": "1706.03762v7.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 198.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 95699.2,
+    "timestamp": "2026-04-13T00:19:21.741405",
+    "latency_s": 97.78
+  },
+  {
+    "query_id": "069fc4d1-2158-4e4b-82a6-18dda6113b27",
+    "question": "What is the encoder-decoder structure of the Transformer?",
+    "answer": "According to [Source 1], the encoder-decoder structure of the Transformer consists of:\n\n* A stack of N = 6 identical layers.\n* Each layer has two sub-layers:\n\t+ The first sub-layer is a multi-head self-attention mechanism.\n\t+ The second sub-layer is a simple, position-wise, fully connected layer.",
+    "sources": [
+      {
+        "chunk_id": "a1fdb590-5155-49e4-9d17-cb4160c084cf",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "b40a13b4-e8ea-4030-bd42-4012241b453f",
+        "content_preview": "Figure 1: The Transformer - model architecture.\nThe Transformer follows this overall architecture using stacked self-attention and point-wise, fully\nconnected layers for both the encoder and decoder, ",
+        "source": "1706.03762v7.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 166.1,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 74030.7,
+    "timestamp": "2026-04-13T00:20:37.845284",
+    "latency_s": 76.1
+  },
+  {
+    "query_id": "47900bbc-4ce3-4ade-924d-70b77b0cd173",
+    "question": "What is BERT and what does it stand for?",
+    "answer": "According to [Source 2: 1810.04805v2.pdf], BERT stands for \"Pre-training of Deep Bidirectional Transformers for Language Understanding\".",
+    "sources": [
+      {
+        "chunk_id": "40e201fc-73d8-4ada-a41c-d58fc8e6bd70",
+        "content_preview": "BERT is conceptually simple and empirically\npowerful. It obtains new state-of-the-art re-\nsults on eleven natural language processing\ntasks, including pushing the GLUE score to\n80.5% (7.7% point absol",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "5d849633-3c9c-4c93-b98f-0b070c3a1b37",
+        "content_preview": "Input/Output Representations To make BERT\nhandle a variety of down-stream tasks, our input\nrepresentation is able to unambiguously represent\nboth a single sentence and a pair of sentences\n(e.g.,\u27e8 Ques",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0116",
+        "content_preview": "doi: 10.18653/v1/D19-1244. URL https://www.aclweb.org/anthology/D19-1244.\n[47] Fabio Petroni, Tim Rockt\u00e4schel, Sebastian Riedel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu,\nand Alexander Miller. Languag",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 158.6,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 83743.3,
+    "timestamp": "2026-04-13T00:22:03.648349",
+    "latency_s": 85.8
+  },
+  {
+    "query_id": "78932c9d-e0c8-47b6-95e4-1a303627083d",
+    "question": "How does BERT's masked language model pre-training work?",
+    "answer": "According to [Source 3], BERT's masked language model pre-training works as follows:\n\n\"Unlike Peters et al. (2018a) and Radford et al.\n(2018), we do not use traditional left-to-right or\nright-to-left language models to pre-train BERT.\nInstead, we pre-train BERT using two unsuper-\nvised tasks, described in this section. This step\nis presented in the left part of Figure 1.\n\nTask #1: Masked LM Intuitively, it is reason-\nable to believe that a deep bidirectional model is\n\n... (rest of the text)\n\nThis suggests that BERT's masked language model pre-training involves randomly masking some tokens from the input and training the model to predict the original vocabulary id of the masked token.",
+    "sources": [
+      {
+        "chunk_id": "1aa2f925-317-0008",
+        "content_preview": "approaches by proposing BERT: Bidirectional\nEncoder Representations from Transformers.\nBERT alleviates the previously mentioned unidi-\nrectionality constraint by using a \u201cmasked lan-\nguage model\u201d (MLM",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ed5ce61a-65e1-4b5d-933a-267914fe7a5f",
+        "content_preview": "segment, and position embeddings. A visualiza-\ntion of this construction can be seen in Figure 2.\n3.1 Pre-training BERT\nUnlike Peters et al. (2018a) and Radford et al.\n(2018), we do not use traditiona",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "1aa2f925-317-0145",
+        "content_preview": "1.0% additional accuracy on MNLI when\ntrained on 1M steps compared to 500k steps.\n2. Question: Does MLM pre-training converge\nslower than LTR pre-training, since only 15%\nof words are predicted in eac",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 140.5,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 58669.8,
+    "timestamp": "2026-04-13T00:23:04.396049",
+    "latency_s": 60.75
+  },
+  {
+    "query_id": "9d0ad8c1-7a96-40c4-a11f-d016aeccc6b3",
+    "question": "What is the next sentence prediction task in BERT?",
+    "answer": "According to [Source 2], the Next Sentence Prediction (NSP) task can be illustrated with examples such as:\n\nInput = [CLS] the man went to [MASK] store [SEP]\nhe bought a gallon [MASK] milk [SEP]\nLabel = IsNext\n\nInput = [CLS] the man [MASK] to the store [SEP]\npenguin [MASK] are flight ##less birds [SEP]\nLabel = NotNext\n\nIn this task, the model predicts whether the next sentence is \"IsNext\" or \"NotNext\".",
+    "sources": [
+      {
+        "chunk_id": "8e384371-6f59-4a2a-ab46-9224108f19a6",
+        "content_preview": "thei-th token with (1) the [MASK] token 80% of\nthe time (2) a random token 10% of the time (3)\nthe unchanged i-th token 10% of the time. Then,\nTi will be used to predict the original token with\ncross ",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0121",
+        "content_preview": "the empirical improvements of the MLM model\nfar outweigh the increased training cost.\nNext Sentence Prediction The next sentence\nprediction task can be illustrated in the following\nexamples.\nInput = [",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "5d849633-3c9c-4c93-b98f-0b070c3a1b37",
+        "content_preview": "Input/Output Representations To make BERT\nhandle a variety of down-stream tasks, our input\nrepresentation is able to unambiguously represent\nboth a single sentence and a pair of sentences\n(e.g.,\u27e8 Ques",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "1aa2f925-317-0038",
+        "content_preview": "tionship between two sentences, which is not di-\nrectly captured by language modeling. In order\nto train a model that understands sentence rela-\ntionships, we pre-train for a binarized next sen-\ntence",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 211.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 50763.4,
+    "timestamp": "2026-04-13T00:23:57.248911",
+    "latency_s": 52.85
+  },
+  {
+    "query_id": "dd55f36a-1cd5-486f-be00-91dddc3e471d",
+    "question": "What are the differences between BERT-BASE and BERT-LARGE?",
+    "answer": "Unfortunately, the provided context does not explicitly state the differences between BERT-BASE and BERT-LARGE. However, based on general knowledge, I can provide some information that might be relevant.\n\nAccording to the original paper [Source 1], it is mentioned that \"The effect of model size is explored more thoroughly in Section 5.2.\" This suggests that the differences between BERT-BASE and BERT-LARGE are likely related to their respective sizes or architectures, but the specific details are not provided in the context.\n\nHowever, based on general knowledge, BERT-LARGE typically refers to a larger version of the BERT model, which has more parameters and is trained on more data. This can result in improved performance on certain tasks, as mentioned in the context (e.g., MNLI).",
+    "sources": [
+      {
+        "chunk_id": "c9c06d68-acba-412e-92b2-c57e420edfce",
+        "content_preview": "in terms of model architecture apart from the at-\ntention masking. For the largest and most widely\nreported GLUE task, MNLI, BERT obtains a 4.6%\nabsolute accuracy improvement. On the of\ufb01cial\nGLUE lead",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 169.6,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 82040.3,
+    "timestamp": "2026-04-13T00:25:21.379555",
+    "latency_s": 84.13
+  },
+  {
+    "query_id": "84306dd9-751e-434b-ac6b-92bf254297ff",
+    "question": "How does BERT differ from OpenAI GPT in its use of attention?",
+    "answer": "According to [Source 2], BERT differs from OpenAI GPT in its use of attention. Specifically, BERT uses bidirectional self-attention, whereas GPT uses constrained self-attention where every token can only attend to context to its left.",
+    "sources": [
+      {
+        "chunk_id": "bd0638a2-a372-4674-8c75-45d69c8081e9",
+        "content_preview": "BERTBASE (L=12, H=768, A=12, Total Param-\neters=110M) and BERTLARGE (L=24, H=1024,\nA=16, Total Parameters=340M).\nBERTBASE was chosen to have the same model\nsize as OpenAI GPT for comparison purposes.\n",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0130",
+        "content_preview": "left-to-right Transformer LM on a large text cor-\npus. In fact, many of the design decisions in BERT\nwere intentionally made to make it as close to\nGPT as possible so that the two methods could be\nmin",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 113.4,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 79625.7,
+    "timestamp": "2026-04-13T00:26:43.098398",
+    "latency_s": 81.72
+  },
+  {
+    "query_id": "20e039f2-3d74-46f2-bd85-4a67c7fe2007",
+    "question": "What results did BERT achieve on the SQuAD benchmark?",
+    "answer": "According to [Source 2], BERT achieved the following results on the SQuAD benchmark:\n\n* On SQuAD v1.1, BERT obtained a Test F1 score of 93.2 (1.5 point absolute improvement).\n* On SQuAD v2.0, BERT achieved a Test F1 score of 83.1 (5.1 point absolute improvement).\n\nThese results are mentioned in the introduction section of [Source 3], which cites [Source 2].",
+    "sources": [
+      {
+        "chunk_id": "eac7c2b8-6abf-4da6-83dc-ddcb46b8bbe7",
+        "content_preview": "Table 2: SQuAD 1.1 results. The BERT ensemble\nis 7x systems which use different pre-training check-\npoints and \ufb01ne-tuning seeds.\nSystem Dev Test\nEM F1 EM F1\nTop Leaderboard Systems (Dec 10th, 2018)\nHu",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "40e201fc-73d8-4ada-a41c-d58fc8e6bd70",
+        "content_preview": "BERT is conceptually simple and empirically\npowerful. It obtains new state-of-the-art re-\nsults on eleven natural language processing\ntasks, including pushing the GLUE score to\n80.5% (7.7% point absol",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "1aa2f925-317-0060",
+        "content_preview": "Table 2: SQuAD 1.1 results. The BERT ensemble\nis 7x systems which use different pre-training check-\npoints and \ufb01ne-tuning seeds.\nSystem Dev Test\nEM F1 EM F1\nTop Leaderboard Systems (Dec 10th, 2018)\nHu",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 146.9,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 58023.0,
+    "timestamp": "2026-04-13T00:27:43.209154",
+    "latency_s": 60.11
+  },
+  {
+    "query_id": "fc93668f-f957-4fc8-b495-e333a1673c0a",
+    "question": "What pre-training data was used to train BERT?",
+    "answer": "Unfortunately, the provided context does not explicitly mention the pre-training data used to train BERT. However, I can suggest that you refer to the abstract of the paper [Source 1] for more information.\n\nAccording to the abstract, the authors introduce a new language representation model called BERT, but they do not provide details on the pre-training data used to train it.",
+    "sources": [
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 169.4,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 74791.6,
+    "timestamp": "2026-04-13T00:29:00.092054",
+    "latency_s": 76.88
+  },
+  {
+    "query_id": "1d57ea07-5ce7-4370-88fe-9ee28455a7d6",
+    "question": "How does BERT handle input representation with segment and position embeddings?",
+    "answer": "According to [Source 3], for a given token, its input representation is constructed by summing the corresponding:\n\n1. Token embedding\n2. Segment embedding (indicating whether it belongs to sentence A or sentence B)\n3. Position embedding\n\nThis results in the final hidden vector of the special [CLS] token being denoted as C \u2208 RH, and the final hidden vector for the ith input token being denoted as Ti\u2208 RH.",
+    "sources": [
+      {
+        "chunk_id": "10fe9f33-c727-42b8-9426-5fe95b4cb623",
+        "content_preview": "[CLS] he likes play ##ing [SEP]my dog is cute [SEP]Input\nE[CLS] Ehe Elikes Eplay E##ing E[SEP]Emy Edog Eis Ecute E[SEP]\nToken\nEmbeddings\nEA EB EB EB EB EBEA EA EA EA EASegment\nEmbeddings\nE0 E6 E7 E8 E",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0040",
+        "content_preview": "[CLS] he likes play ##ing [SEP]my dog is cute [SEP]Input\nE[CLS] Ehe Elikes Eplay E##ing E[SEP]Emy Edog Eis Ecute E[SEP]\nToken\nEmbeddings\nEA EB EB EB EB EBEA EA EA EA EASegment\nEmbeddings\nE0 E6 E7 E8 E",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0031",
+        "content_preview": "two ways. First, we separate them with a special\ntoken ([SEP]). Second, we add a learned embed-\nding to every token indicating whether it belongs\nto sentence A or sentence B. As shown in Figure 1,\nwe ",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 159.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 46745.2,
+    "timestamp": "2026-04-13T00:29:48.918391",
+    "latency_s": 48.83
+  },
+  {
+    "query_id": "315010e2-bf5c-49e2-a640-8526eee50485",
+    "question": "What is the effect of model size on BERT's fine-tuning performance?",
+    "answer": "Unfortunately, the provided context does not explicitly state the effect of model size on BERT's fine-tuning performance. However, based on the information in Section 5.2 of [Source 1], it can be inferred that the authors trained a number of BERT models with varying numbers of layers, hidden units, and attention heads to explore the effect of model size on fine-tuning task accuracy.\n\nThe results are reported in Table 6, but the actual findings are not presented in the provided context. However, it is mentioned that the authors \"report the average Dev\" score for selected GLUE tasks, suggesting that the experiment was conducted to evaluate the impact of different model sizes on BERT's performance.\n\nIn summary, while the exact effect of model size on BERT's fine-tuning performance is not explicitly stated in the provided context, it can be inferred that the authors conducted an experiment to investigate this aspect.",
+    "sources": [
+      {
+        "chunk_id": "c2eabecf-0b58-4508-b650-8558ccd8ceb4",
+        "content_preview": "than a deep bidirectional model, since it can use\nboth left and right context at every layer.\n5.2 Effect of Model Size\nIn this section, we explore the effect of model size\non \ufb01ne-tuning task accuracy.",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0120",
+        "content_preview": "left LSTMs to generate features for downstream tasks. Among the three, only BERT representations are jointly\nconditioned on both left and right context in all layers. In addition to the architecture d",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "38567cb7-3845-418b-8d92-e6bfbf9c128c",
+        "content_preview": "A.5 Illustrations of Fine-tuning on Different\nTasks\nThe illustration of \ufb01ne-tuning BERT on different\ntasks can be seen in Figure 4. Our task-speci\ufb01c\nmodels are formed by incorporating BERT with\none ad",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "1aa2f925-317-0024",
+        "content_preview": "tuning, the BERT model is \ufb01rst initialized with\nthe pre-trained parameters, and all of the param-\neters are \ufb01ne-tuned using labeled data from the\ndownstream tasks. Each downstream task has sep-\narate ",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 176.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 99844.2,
+    "timestamp": "2026-04-13T00:31:30.862038",
+    "latency_s": 101.94
+  },
+  {
+    "query_id": "0805559e-85bd-4fd3-a6ac-e0a150328108",
+    "question": "How does BERT's feature-based approach compare to fine-tuning on NER?",
+    "answer": "According to the provided context, BERT's feature-based approach is shown to be surprisingly robust to different masking strategies in Named Entity Recognition (NER). However, using only the MASK strategy or the R ND strategy performs much worse than the proposed strategy. The feature-based approach involves concatenating the last 4 layers of BERT as features and extracting activations from one or more layers without fine-tuning any parameters of BERT.\n\n[Source N: 1810.04805v2.pdf]",
+    "sources": [
+      {
+        "chunk_id": "11f9e6f7-aa8f-416d-bf13-57769f4021e5",
+        "content_preview": "Dev set results. For the feature-based approach,\nwe concatenate the last 4 layers of BERT as the\nfeatures, which was shown to be the best approach\nin Section 5.3.\nFrom the table it can be seen that \ufb01n",
+        "source": "1810.04805v2.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0150",
+        "content_preview": "Dev set results. For the feature-based approach,\nwe concatenate the last 4 layers of BERT as the\nfeatures, which was shown to be the best approach\nin Section 5.3.\nFrom the table it can be seen that \ufb01n",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "1aa2f925-317-0084",
+        "content_preview": "sults. Hyperparameters were selected using the Dev\nset. The reported Dev and Test scores are averaged over\n5 random restarts using those hyperparameters.\nlayer in the output. We use the representation",
+        "source": "1810.04805v2.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 150.3,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 45912.2,
+    "timestamp": "2026-04-13T00:32:18.833472",
+    "latency_s": 47.97
+  },
+  {
+    "query_id": "fbfa810a-476b-4506-9caf-57c891d92c7a",
+    "question": "What is retrieval-augmented generation and how does RAG work?",
+    "answer": "Retrieval-Augmented Generation (RAG) is a method that combines the strengths of large language models (LLMs) and retrieval-based approaches to generate high-quality text.\n\nAccording to [Source 1], RAG first determines if augmenting the continued generation with retrieved passages would be helpful. If so, it outputs a retrieval token that calls a retriever model on demand. The retriever model then retrieves relevant documents from a database or web search engine.\n\nSubsequently, RAG concurrently processes multiple retrieved passages, evaluates their relevance, and generates corresponding task outputs (Step 2). This process involves two main steps: retrieval and generation.\n\nThe retrieval step uses a retriever model to retrieve relevant documents based on the input prompt and preceding generations. The generated text is then used as input for the retriever model to retrieve more relevant passages.\n\n[Source 3] mentions that RAG uses a decompose-then-recompose algorithm, which involves decomposing the generation task into two sub-tasks: retrieval and generation. This approach allows RAG to leverage the strengths of both LLMs and retrieval-based approaches.\n\nOverall, RAG works by combining the capabilities of LLMs with the ability to retrieve relevant documents from a database or web search engine, allowing it to generate high-quality text that is more accurate and informative than traditional LLM-based generation methods.",
+    "sources": [
+      {
+        "chunk_id": "b28cf36a-bc6b-4818-bc36-9bec34b63661",
+        "content_preview": "indicate the need for retrieval and its generation quality respectively (Figure 1 right). In particular,\ngiven an input prompt and preceding generations, SELF -RAG first determines if augmenting the\nc",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0001",
+        "content_preview": "exhibit hallucinations since the accuracy of\ngenerated texts cannot be secured solely by\nthe parametric knowledge they encapsulate. Al-\nthough retrieval-augmented generation (RAG)\nis a practicable com",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-61947809",
+        "content_preview": "Entity: retrieval-augmented generation (RAG)\n  \u2192 USES_METHOD \u2192 Paper: Corrective Retrieval Augmented Generation\n  \u2192 USES_METHOD \u2192 Author: Shi-Qi Yan\n  \u2192 USES_METHOD \u2192 Author: Jia-Chen Gu\n  \u2192 USES_METH",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "5daccdf6-5f6a-417e-9680-7a152ceb4a2c",
+        "content_preview": "tasks. While we primarily proposed to improve the\nRAG framework from a corrective perspective and\nCRAG can be seamlessly coupled with various\nRAG-based approaches, fine-tuning an external\nretrieval ev",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 229.3,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 61966.1,
+    "timestamp": "2026-04-13T00:33:22.871554",
+    "latency_s": 64.04
+  },
+  {
+    "query_id": "10b214c1-cd35-43be-8809-6b0769c16f9f",
+    "question": "What is the difference between RAG-Sequence and RAG-Token models?",
+    "answer": "According to [Source 2], the main difference between RAG-Sequence and RAG-Token models lies in how they predict each target token.\n\nRAG-Sequence model uses the same retrieved document to generate the complete sequence, treating the retrieved document as a single latent variable that represents all documents. \n\nOn the other hand, RAG-Token model can predict each target token based on a different document. This means that RAG-Token has access to multiple documents at once, whereas RAG-Sequence relies solely on one document.\n\nThis difference in approach affects their performance in terms of Rouge-L and Bleu-1 scores, as shown in Figure 3 (right) [Source 3].",
+    "sources": [
+      {
+        "chunk_id": "e753d54a-e4ed-4b66-a8a7-1e1674233148",
+        "content_preview": "total ngrams generated by different models. Table 5 shows that RAG-Sequence\u2019s generations are\nmore diverse than RAG-Token\u2019s, and both are signi\ufb01cantly more diverse than BART without needing\nany divers",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0018",
+        "content_preview": "to predict each target token. The second approach, RAG-Token, can predict each target token based\non a different document. In the following, we formally introduce both models and then describe the\np\u03b7 ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7100f8a7-b679-4dfc-80c2-041198bea422",
+        "content_preview": "documents. Figure 3 (right) shows that retrieving more documents leads to higher Rouge-L for\nRAG-Token at the expense of Bleu-1, but the effect is less pronounced for RAG-Sequence.\n10 20 30 40 50\nKR e",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0066",
+        "content_preview": "Effect of Retrieving more documents Models are trained with either 5 or 10 retrieved latent\ndocuments, and we do not observe signi\ufb01cant differences in performance between them. We have the\n\ufb02exibility ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 173.4,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 56352.7,
+    "timestamp": "2026-04-13T00:34:21.300195",
+    "latency_s": 58.43
+  },
+  {
+    "query_id": "219845cf-9072-4ea0-ae43-bc52c904841a",
+    "question": "What retriever does RAG use and how does it work?",
+    "answer": "Unfortunately, the provided context does not explicitly mention what retriever RAG uses or how it works. However, I can provide some information based on the available sources.\n\nThe context mentions that RAG is integrated with large-scale web searches as a strategic extension [Source 1 and Source 2]. It also mentions that inputs are rewritten into queries composed of keywords by ChatGPT to mimic daily usage of search engines.\n\nHowever, there is no explicit mention of what retriever RAG uses or how it works. The context only provides information about the integration with large-scale web searches and the use of ChatGPT for query rewriting.\n\nTherefore, I cannot provide a definitive answer to what retriever RAG uses and how it works based on the provided context.",
+    "sources": [
+      {
+        "chunk_id": "144d23de-71e-0051",
+        "content_preview": "knowledge. Since retrieval from static and limited\ncorpora can only return sub-optimal documents\nin terms of scope and diversity, large-scale web\nsearches (Piktus et al., 2021; Komeili et al., 2022)\na",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "e3244807-bf2a-4b84-8a71-a80c8573400d",
+        "content_preview": "knowledge. Since retrieval from static and limited\ncorpora can only return sub-optimal documents\nin terms of scope and diversity, large-scale web\nsearches (Piktus et al., 2021; Komeili et al., 2022)\na",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 182.3,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 85704.3,
+    "timestamp": "2026-04-13T00:35:49.078215",
+    "latency_s": 87.78
+  },
+  {
+    "query_id": "6e154213-1e2b-4102-b36a-0d165612d707",
+    "question": "What generator model does RAG use as its parametric memory?",
+    "answer": "According to [Source 2: 2005.11401v4.pdf], the BART generator parameters \u03b8 are referred to as the \"parametric memory\" henceforth, but it is not explicitly stated that BART is used as the generator model for RAG's parametric memory.\n\nHowever, based on the context provided in [Source 1: 2005.11401v4.pdf], it can be inferred that the RAG models use a combination of parametric and non-parametric memory with generation for knowledge-intensive tasks. The paper mentions that the RAG models achieve state-of-the-art results on open Natural Questions, WebQuestions, and CuratedTrec, but it does not explicitly mention which generator model is used as its parametric memory.\n\nTherefore, I must answer:\n\nI couldn't find any information in the provided context about what generator model RAG uses as its parametric memory.",
+    "sources": [
+      {
+        "chunk_id": "626d8e8c-9e6e-492e-9c87-ba6a5b5f51ea",
+        "content_preview": "present without additional training.\nOur results highlight the bene\ufb01ts of combining parametric and non-parametric memory with genera-\ntion for knowledge-intensive tasks\u2014tasks that humans could not rea",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0024",
+        "content_preview": "state-of-the-art results on a diverse set of generation tasks and outperforms comparably-sized T5\nmodels [32]. We refer to the BART generator parameters\u03b8 as the parametric memory henceforth.\n2.4 Train",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-64081038",
+        "content_preview": "Entity: pre-trained language models\n  \u2192 RELATES_TO \u2192 Paper: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks\n  \u2192 RELATES_TO \u2192 Author: Patrick Lewis\n  \u2192 RELATES_TO \u2192 Author: Ethan Perez",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "e753d54a-e4ed-4b66-a8a7-1e1674233148",
+        "content_preview": "total ngrams generated by different models. Table 5 shows that RAG-Sequence\u2019s generations are\nmore diverse than RAG-Token\u2019s, and both are signi\ufb01cantly more diverse than BART without needing\nany divers",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 140.7,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 52818.3,
+    "timestamp": "2026-04-13T00:36:44.000991",
+    "latency_s": 54.93
+  },
+  {
+    "query_id": "eba3e74b-48ba-4a9c-9c7a-1dbdce1df0ac",
+    "question": "How does RAG perform on open-domain question answering tasks?",
+    "answer": "According to the provided context, RAG sets a new state of the art on all four open-domain QA tasks. Specifically, it outperforms state-of-the-art models on these tasks, with the exception of the T5-comparable split for TQA (Trivia Question Answering). [Source 1: 2005.11401v4.pdf]",
+    "sources": [
+      {
+        "chunk_id": "b7cf394e-2a5a-4f5c-839e-c10fb0066ce4",
+        "content_preview": "(supports/refutes) task studied in Thorne and Vlachos [57]. In both cases we report label accuracy.\n4 Results\n4.1 Open-domain Question Answering\nTable 1 shows results for RAG along with state-of-the-a",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0041",
+        "content_preview": "(supports/refutes) task studied in Thorne and Vlachos [57]. In both cases we report label accuracy.\n4 Results\n4.1 Open-domain Question Answering\nTable 1 shows results for RAG along with state-of-the-a",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "171bb8a5-53df-488d-83d8-a812e70262db",
+        "content_preview": "Questions (NQ) [29], TriviaQA (TQA) [24]. WebQuestions (WQ) [3] and CuratedTrec (CT) [2]. As\nCT and WQ are small, we follow DPR [26] by initializing CT and WQ models with our NQ RAG\nmodel. We use the ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0030",
+        "content_preview": "Navigable Small World approximation for fast retrieval [37]. During training, we retrieve the top\nk documents for each query. We considerk\u2208{ 5, 10} for training and setk for test time using dev\ndata. ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 144.5,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 50036.4,
+    "timestamp": "2026-04-13T00:37:36.105354",
+    "latency_s": 52.1
+  },
+  {
+    "query_id": "acea60f5-2989-401f-8bb6-d1c7c6d52020",
+    "question": "What is the index hot-swapping capability of RAG?",
+    "answer": "According to [Source 2 and Source 4], RAG has an advantage in that knowledge can be easily updated at test time through \"index hot-swapping\". This means that the retrieval component of RAG can be swapped with a new index without requiring any retraining, allowing the model to adapt to changes in the world.",
+    "sources": [
+      {
+        "chunk_id": "7100f8a7-b679-4dfc-80c2-041198bea422",
+        "content_preview": "documents. Figure 3 (right) shows that retrieving more documents leads to higher Rouge-L for\nRAG-Token at the expense of Bleu-1, but the effect is less pronounced for RAG-Sequence.\n10 20 30 40 50\nKR e",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0061",
+        "content_preview": "improves results on all other tasks, especially for Open-Domain QA, where it is crucial.\nIndex hot-swapping An advantage of non-parametric memory models like RAG is that knowledge\ncan be easily update",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "c46732ac-8a46-4c13-ab15-9b986c690ed0",
+        "content_preview": "improves results on all other tasks, especially for Open-Domain QA, where it is crucial.\nIndex hot-swapping An advantage of non-parametric memory models like RAG is that knowledge\ncan be easily update",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0077",
+        "content_preview": "memory. We showed that our RAG models obtain state of the art results on open-domain QA. We\nfound that people prefer RAG\u2019s generation over purely parametric BART, \ufb01nding RAG more factual\nand speci\ufb01c. ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 160.7,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 51203.9,
+    "timestamp": "2026-04-13T00:38:29.384102",
+    "latency_s": 53.28
+  },
+  {
+    "query_id": "821c60cb-cb09-4d54-bf01-e9df2d3a8e05",
+    "question": "How does RAG handle fact verification on the FEVER dataset?",
+    "answer": "Unfortunately, the provided context does not explicitly state how RAG handles fact verification on the FEVER dataset. However, it can be inferred that RAG retrieves its own evidence for fact verification and achieves an accuracy within 2.7% of a pre-trained model (RoBERTa) used by Thorne and Vlachos [57] for comparison.\n\nIt is also mentioned that documents retrieved by RAG are analyzed to see if they correspond to documents annotated as gold evidence in FEVER, but the exact handling of fact verification on this dataset is not explicitly stated.",
+    "sources": [
+      {
+        "chunk_id": "b1886b67-eedd-4ab6-b250-a1dad413e636",
+        "content_preview": "For 2-way classi\ufb01cation, we compare against Thorne and Vlachos [57], who train RoBERTa [35]\nto classify the claim as true or false given the gold evidence sentence. RAG achieves an accuracy\nwithin 2.7",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0132",
+        "content_preview": "James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. FEVER: a large-\nscale dataset for fact extraction and VERification. In Proceedings of the 2018 Conference of the\nNorth Ame",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 161.7,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 77400.8,
+    "timestamp": "2026-04-13T00:39:48.864666",
+    "latency_s": 79.48
+  },
+  {
+    "query_id": "b4031e24-a661-4028-8544-e663a7498968",
+    "question": "What are the generation diversity results for RAG compared to BART?",
+    "answer": "According to [Source 4: 2005.11401v4.pdf], Table 5 shows that RAG-Sequence's generations are more diverse than RAG-Token's, and both are significantly more diverse than BART without needing any diversity-promoting decoding.\n\nAdditionally, it is mentioned in [Source 4: 2005.11401v4.pdf] that the ratio of distinct ngrams to total ngrams generated by different models shows that RAG-Sequence's generations are more diverse than RAG-Token's, and both are significantly more diverse than BART without needing any diversity-promoting decoding.\n\nHowever, [Source 4: 2005.11401v4.pdf] does not provide explicit generation diversity results for RAG compared to BART in terms of a specific metric or value.",
+    "sources": [
+      {
+        "chunk_id": "fe00ed15-7654-4a15-a478-79e60aab9fb9",
+        "content_preview": "BART were factual in a further 17% of cases, clearly demonstrating the effectiveness of RAG on\nthe task over a state-of-the-art generation model. Evaluators also \ufb01nd RAG generations to be more\nspeci\ufb01c",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0058",
+        "content_preview": "by RAG and gold evidence annotations. We \ufb01nd that the top retrieved document is from a gold article\nin 71% of cases, and a gold article is present in the top 10 retrieved articles in 90% of cases.\n4.5",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-61947809",
+        "content_preview": "Entity: retrieval-augmented generation (RAG)\n  \u2192 USES_METHOD \u2192 Paper: Corrective Retrieval Augmented Generation\n  \u2192 USES_METHOD \u2192 Author: Shi-Qi Yan\n  \u2192 USES_METHOD \u2192 Author: Jia-Chen Gu\n  \u2192 USES_METH",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "6085c817-ed64-4db3-b568-c325e0e0e00a",
+        "content_preview": "BART generations (see \u00a74.5).\n4.3 Jeopardy Question Generation\nTable 2 shows that RAG-Token performs better than RAG-Sequence on Jeopardy question generation,\nwith both models outperforming BART on Q-B",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0059",
+        "content_preview": "total ngrams generated by different models. Table 5 shows that RAG-Sequence\u2019s generations are\nmore diverse than RAG-Token\u2019s, and both are signi\ufb01cantly more diverse than BART without needing\nany divers",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 140.7,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 56272.9,
+    "timestamp": "2026-04-13T00:40:47.225854",
+    "latency_s": 58.36
+  },
+  {
+    "query_id": "aba3beba-6b83-4f01-9bf9-98249d8348ea",
+    "question": "How does the number of retrieved documents affect RAG performance?",
+    "answer": "According to [Source 3], retrieving more documents leads to higher Rouge-L scores for RAG-Token, but at the expense of Bleu-1. The effect is less pronounced for RAG-Sequence.\n\nAdditionally, it's mentioned that:\n\n* For RAG-Sequence, there are no significant differences in performance between models trained with 5 or 10 retrieved latent documents.\n* Retrieving more documents at test time monotonically improves Open-domain QA results for RAG-Sequence and RAG-Token, but performance peaks for RAG-Token at 10 retrieved documents.\n\n[Source N]: [Source 1], [Source 2]",
+    "sources": [
+      {
+        "chunk_id": "7d9da763-881a-4cb8-b4c7-755cec2cfe89",
+        "content_preview": "Effect of Retrieving more documents Models are trained with either 5 or 10 retrieved latent\ndocuments, and we do not observe signi\ufb01cant differences in performance between them. We have the\n\ufb02exibility ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0066",
+        "content_preview": "Effect of Retrieving more documents Models are trained with either 5 or 10 retrieved latent\ndocuments, and we do not observe signi\ufb01cant differences in performance between them. We have the\n\ufb02exibility ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "7100f8a7-b679-4dfc-80c2-041198bea422",
+        "content_preview": "documents. Figure 3 (right) shows that retrieving more documents leads to higher Rouge-L for\nRAG-Token at the expense of Bleu-1, but the effect is less pronounced for RAG-Sequence.\n10 20 30 40 50\nKR e",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 133.4,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 51112.6,
+    "timestamp": "2026-04-13T00:41:40.391318",
+    "latency_s": 53.17
+  },
+  {
+    "query_id": "e90fc81d-a677-47c1-af67-94eea0c72f56",
+    "question": "What are the advantages of RAG over purely parametric models like T5?",
+    "answer": "According to the provided context, one advantage of non-parametric memory models like RAG is that knowledge can be easily updated at test time. This is in contrast to parametric-only models like T5 or BART, which need further training to update their behavior as the world changes. [Source 1]",
+    "sources": [
+      {
+        "chunk_id": "ded3d9d1-8b7-0031",
+        "content_preview": "and train RAG by directly minimizing the negative log-likelihood of answers. We compare RAG to\nthe popular extractive QA paradigm [5, 7, 31, 26], where answers are extracted spans from retrieved\ndocum",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "df36e907-28f8-4d67-8cf8-2ee73f29d55e",
+        "content_preview": "run experiments with RAG can be found athttps://github.com/huggingface/transformers/\nblob/master/examples/rag/README.md and an interactive demo of a RAG model can be found\nat https://huggingface.co/ra",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0061",
+        "content_preview": "improves results on all other tasks, especially for Open-Domain QA, where it is crucial.\nIndex hot-swapping An advantage of non-parametric memory models like RAG is that knowledge\ncan be easily update",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 129.3,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 41982.4,
+    "timestamp": "2026-04-13T00:42:24.442213",
+    "latency_s": 44.05
+  },
+  {
+    "query_id": "841f10cb-5965-466e-945f-b565d8621a85",
+    "question": "What is Self-RAG and how does it differ from standard RAG?",
+    "answer": "According to [Source 1: 2401.15884v3.pdf] and [Source 2: 2310.11511v1.pdf], Self-RAG (SELF -RAG) is a model that learns to retrieve, generate, and critique through self-reflection.\n\nSelf-RAG differs from standard RAG in its ability to output special critic tokens as needed, which requires instruction-tuning using human or LLM-annotated data. This ability is not learned in common LLMs like CRAG. As a result, Self-RAG's performance dropped significantly when it was changed from SelfRAG-LLaMA2-7b to LLaMA2-hf-7b, even underperforming the standard RAG on several benchmarks.\n\nIn contrast, standard RAG does not have this requirement for outputting special critic tokens.",
+    "sources": [
+      {
+        "chunk_id": "144d23de-71e-0067",
+        "content_preview": "LLMs was changed from SelfRAG-LLaMA2-7b\nto LLaMA2-hf-7b, while the performance of Self-\nRAG dropped significantly, even underperforming\nthe standard RAG on several benchmarks. The\nreason for these res",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-64064515",
+        "content_preview": "Entity: Learning To Retrieve, Generate, And Critique Through Self-Reflection\nAbstract: Preprint.\nSELF -RAG: L EARNING TO RETRIEVE , G ENERATE , AND\nCRITIQUE THROUGH SELF -R EFLECTION\nAkari Asai\u2020, Zeqi",
+        "source": "2310.11511v1.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "9b4f2dc8-5439-4e6b-b64c-f84415ad5b10",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0079",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 134.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 64370.9,
+    "timestamp": "2026-04-13T00:43:30.885665",
+    "latency_s": 66.44
+  },
+  {
+    "query_id": "14c2864c-e846-43a2-a219-a0cec5bca326",
+    "question": "What are reflection tokens in Self-RAG?",
+    "answer": "According to [Source 3: 2310.11511v1.pdf], reflection tokens in SELF-RAG are categorized into two types:\n\n1. Retrieval-on-demand (Retrieve): This type of token indicates whether the continuation requires factual grounding.\n2. Critique tokens: These tokens are used for self-reflection and critique of the LM's own generation process.\n\nAdditionally, [Source 4: 2310.11511v1.pdf] mentions that reflection tokens are generated by the LM as part of its own generation process, and they include two subcategories:\n\n* Factual accuracy\n* Versatility\n\nHowever, it does not provide a detailed definition of what these categories mean in terms of specific token types.\n\n[Source 2: 2310.11511v1.pdf] briefly mentions that reflection tokens are used to enable the LM to learn to retrieve, generate, and critique text passages, but it does not provide a detailed explanation of what these tokens represent.",
+    "sources": [
+      {
+        "chunk_id": "e5fdaeef-62cd-434f-bacd-328f516c2ef7",
+        "content_preview": "(Algorithm 1) over the generated task output. For instance, in Figure 1 (right), the retrieved passages\nd1 is selected at the first time step since d2 does not provide direct evidence ( ISREL is Irrel",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0096",
+        "content_preview": "through retrieval on demand and self-reflection.SELF -R AG trains an LM to learn to retrieve, generate,\nand critique text passages and its own generation by predicting the next tokens from its origina",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "0442e663-5d53-4671-b661-856d463b5b1d",
+        "content_preview": "Preprint.\nA S ELF -R AG DETAILS\nA.1 R EFLECTION TOKENS .\nDefinitions of reflection tokens. Below, we provide a detailed definition of reflection type and\noutput tokens. The first three aspects will be",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0006",
+        "content_preview": "LLM\u2019s generation quality, including its factual accuracy without hurting its versatility, via on-demand\nretrieval and self-reflection. We train an arbitrary LM in an end-to-end manner to learn to refl",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 129.2,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 54513.9,
+    "timestamp": "2026-04-13T00:44:27.486212",
+    "latency_s": 56.6
+  },
+  {
+    "query_id": "2f6f2ca3-71fa-49f5-94aa-fab3caa02014",
+    "question": "How does Self-RAG decide when to retrieve passages?",
+    "answer": "According to [Source 1], SELF -RAG dynamically decides when to retrieve text passages by predicting the \"Retrieve\" token. Alternatively, a threshold can be set, and if the probability of generating the \"Retrieve =Yes\" token normalized over all output tokens in Retrieve surpasses a designated threshold, retrieval is triggered (as mentioned in Appendix Section A.3).",
+    "sources": [
+      {
+        "chunk_id": "b28cf36a-bc6b-4818-bc36-9bec34b63661",
+        "content_preview": "indicate the need for retrieval and its generation quality respectively (Figure 1 right). In particular,\ngiven an input prompt and preceding generations, SELF -RAG first determines if augmenting the\nc",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-64064515",
+        "content_preview": "Entity: Learning To Retrieve, Generate, And Critique Through Self-Reflection\nAbstract: Preprint.\nSELF -RAG: L EARNING TO RETRIEVE , G ENERATE , AND\nCRITIQUE THROUGH SELF -R EFLECTION\nAkari Asai\u2020, Zeqi",
+        "source": "2310.11511v1.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0053",
+        "content_preview": "Adaptive retrieval with threshold.SELF -RAG dynamically decides when to retrieve text passages by\npredicting Retrieve . Alternatively, our framework allows a threshold to be set. Specifically, if the ",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 155.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 45504.2,
+    "timestamp": "2026-04-13T00:45:15.044856",
+    "latency_s": 47.56
+  },
+  {
+    "query_id": "34447a47-f928-408b-825e-82f4092bf8b9",
+    "question": "What are the ISREL, ISSUP, and ISUSE critique tokens in Self-RAG?",
+    "answer": "The question does not provide explicit information about what the ISREL, ISSUP, and ISUSE critique tokens represent. However, based on the provided context from [Source 1] and [Source 4], we can infer that these tokens are part of a framework called Self-RAG.\n\nAccording to [Source 4], the ISREL, ISSUP, and ISUSE tokens are groups of critique token types, each with its own score at timestamp t. The scores are computed using the formula:\n\nS( Critique ) = \u2211wGsGt for G = {ISREL, ISSUP, ISUSE}\n\nwhere sGt is the generation probability of the most desirable reflection token for the critique token type G.\n\nIt can be inferred that these tokens are related to the evaluation and critique of generated text, but their specific meaning is not explicitly stated in the provided context.",
+    "sources": [
+      {
+        "chunk_id": "17f4d45c-f4c-0047",
+        "content_preview": "evaluates whether the passage supports the model generation and predicts ISSUP . Critique tokens\nISREL and ISSUP are appended after the retrieved passage or generations. At the end of the output, y\n(o",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-64064515",
+        "content_preview": "Entity: Learning To Retrieve, Generate, And Critique Through Self-Reflection\nAbstract: Preprint.\nSELF -RAG: L EARNING TO RETRIEVE , G ENERATE , AND\nCRITIQUE THROUGH SELF -R EFLECTION\nAkari Asai\u2020, Zeqi",
+        "source": "2310.11511v1.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "91932f29-5d41-417f-b84e-e93b29fe9181",
+        "content_preview": "plausible and supported by relevant passages with higher S&P scores on short-form PopQA, which is\nconsistent with Menick et al. (2022). Human annotators also find ISREL and ISSUP reflection token\npred",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0055",
+        "content_preview": "Critique token type. For each critique token group G (e.g., ISREL ), we denote its score at timestamp\nt as sG\nt , and we compute a segment score as follows:\nf (yt, d, Critique ) = p(yt|x, d, y<t)) + S",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 179.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 58997.7,
+    "timestamp": "2026-04-13T00:46:16.134205",
+    "latency_s": 61.09
+  },
+  {
+    "query_id": "d097ad0a-d44f-4222-8e59-cef80c378400",
+    "question": "How was the Self-RAG critic model trained?",
+    "answer": "According to [Source 4: 2310.11511v1.pdf], the Self-RAG critic model was trained using a combination of large-scale web searches and lightweight retrieval evaluator, as mentioned in the \"USES_METHOD\" section of the knowledge_graph entity.\n\nAdditionally, [Source 5: 2310.11511v1.pdf] mentions that the critic model (C) was trained using manual annotation of reflection tokens for each segment, but it does not provide further details on the training process itself.\n\nHowever, it is mentioned in [Source 4: 2310.11511v1.pdf] that the final generator model (M) was trained using a conventional LM objective, and that the critic model was used to train the generator model without relying on the critic at inference time.",
+    "sources": [
+      {
+        "chunk_id": "fc4d844b-0b45-44d1-a10c-85020ddd072b",
+        "content_preview": "2). It then generates critique tokens to criticize its own output and choose best one (Step 3) in terms\nof factuality and overall quality. This process differs from conventional RAG (Figure 1 left), w",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0009",
+        "content_preview": "Preprint.\nStep 1: Retrieve K documents\nCalifornia was named after a \ufb01ctional \nisland in a Spanish book. \nPrompt How did US states get their names? \nUS states got their names from a variety of \nsources",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-59852456",
+        "content_preview": "Entity: decompose-then-recompose algorithm\n  \u2192 USES_METHOD \u2192 Paper: Corrective Retrieval Augmented Generation\n  \u2192 USES_METHOD \u2192 Author: Shi-Qi Yan\n  \u2192 USES_METHOD \u2192 Author: Jia-Chen Gu\n  \u2192 USES_METHOD",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "e5fdaeef-62cd-434f-bacd-328f516c2ef7",
+        "content_preview": "(Algorithm 1) over the generated task output. For instance, in Figure 1 (right), the retrieved passages\nd1 is selected at the first time step since d2 does not provide direct evidence ( ISREL is Irrel",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0037",
+        "content_preview": "train the final generator model (M) using the conventional LM objective (Section 3.2.2) to enable\nM to generate reflection tokens by itself without relying on the critic at inference time.\n3.2 S ELF -",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 163.6,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 90418.1,
+    "timestamp": "2026-04-13T00:47:48.633355",
+    "latency_s": 92.5
+  },
+  {
+    "query_id": "b09bd162-8431-46b0-a27a-1b3259f9c912",
+    "question": "What datasets was Self-RAG evaluated on?",
+    "answer": "Unfortunately, I couldn't find any information about the specific datasets used to evaluate Self-RAG in the provided context. The text only mentions that Figure 3 demonstrated the performance change of Self-RAG and Self-CRAG on the PopQA dataset, but it does not explicitly state which other datasets were used.\n\nHowever, [Source N] is missing, so I couldn't find any additional information about the specific datasets used to evaluate Self-RAG.",
+    "sources": [
+      {
+        "chunk_id": "9b4f2dc8-5439-4e6b-b64c-f84415ad5b10",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 150.1,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 72789.3,
+    "timestamp": "2026-04-13T00:49:03.485615",
+    "latency_s": 74.85
+  },
+  {
+    "query_id": "3ea54790-1d2e-4925-937e-af0fc8866f8c",
+    "question": "How does Self-RAG perform compared to ChatGPT on open-domain QA?",
+    "answer": "According to [Source 1], SELF-RAG outperforms ChatGPT on Open-domain QA tasks.",
+    "sources": [
+      {
+        "chunk_id": "17f4d45c-f4c-0003",
+        "content_preview": "RAG (7B and 13B parameters) significantly outperforms state-of-the-art LLMs\nand retrieval-augmented models on a diverse set of tasks. Specifically, SELF -RAG\noutperforms ChatGPT and retrieval-augmente",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "79e39c46-7c92-4ead-b62c-ff427efb9438",
+        "content_preview": "RAG significantly outperforms pre-trained and instruction-tuned LLMs that have more parameters and\nwidely adopted RAG approaches with higher citation accuracy. In particular, SELF -RAG outperforms\nret",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0077",
+        "content_preview": "memory. We showed that our RAG models obtain state of the art results on open-domain QA. We\nfound that people prefer RAG\u2019s generation over purely parametric BART, \ufb01nding RAG more factual\nand speci\ufb01c. ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 154.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 47312.8,
+    "timestamp": "2026-04-13T00:49:52.892322",
+    "latency_s": 49.41
+  },
+  {
+    "query_id": "d6bb0325-a471-4da8-8216-da5af30ab96b",
+    "question": "How does Self-RAG enable test-time customization of model behavior?",
+    "answer": "According to [Source 2: 2005.11401v4.pdf], Self-RAG enables test-time customization of model behavior by allowing the number of retrieved latent documents to be adjusted at test time, which can affect performance and runtime.\n\nAdditionally, [Source 3: 2005.11401v4.pdf] states that \"we have the flexibility to adjust the number of retrieved documents at test time, which can affect performance and runtime.\"\n\nThis suggests that Self-RAG provides a flexible framework for fine-tuning the model's behavior based on specific requirements or conditions during testing.",
+    "sources": [
+      {
+        "chunk_id": "a01d961d-dd7b-4530-88cf-c5e113dab0ec",
+        "content_preview": "also observe a large performance gap between SELF -R AG and No Retriever or Critic baselines across\ntasks, indicating that training an LM with those models largely contributes to the performance gain ",
+        "source": "2310.11511v1.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "ded3d9d1-8b7-0066",
+        "content_preview": "Effect of Retrieving more documents Models are trained with either 5 or 10 retrieved latent\ndocuments, and we do not observe signi\ufb01cant differences in performance between them. We have the\n\ufb02exibility ",
+        "source": "2005.11401v4.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-16808093",
+        "content_preview": "Entity: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks\nAbstract: Retrieval-Augmented Generation for\nKnowledge-Intensive NLP Tasks\nPatrick Lewis\u2020\u2021, Ethan Perez\u22c6,\nAleksandra Piktus\u2020, F",
+        "source": "2005.11401v4.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "316a6bf3-89e3-455c-90c7-5abeaad88a34",
+        "content_preview": "et al., 2022) provided by Self-RAG were also\nadopted in our experiments. The relevance signals\nfor fine-tuning the evaluator can be collected from\nthe existing datasets. For example, PopQA (Mallen\net ",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0079",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 152.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 99039.8,
+    "timestamp": "2026-04-13T00:51:34.002831",
+    "latency_s": 101.11
+  },
+  {
+    "query_id": "200cfb2a-5d0c-40ac-9718-95a70ed37e3e",
+    "question": "What is the tree-decoding inference strategy in Self-RAG?",
+    "answer": "According to [Source 3: 2310.11511v1.pdf], at each segment step t, when retrieval is required, Self-RAG uses a tree-decoding inference strategy guided by LM-generated value scores. This involves using a tree search with the value function that simply indicates an overall score of each generation.",
+    "sources": [
+      {
+        "chunk_id": "17f4d45c-f4c-0053",
+        "content_preview": "Adaptive retrieval with threshold.SELF -RAG dynamically decides when to retrieve text passages by\npredicting Retrieve . Alternatively, our framework allows a threshold to be set. Specifically, if the ",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "9cec2162-bca7-4139-ad98-3dd6a65be78f",
+        "content_preview": "2.5 Decoding\nAt test time, RAG-Sequence and RAG-Token require different ways to approximatearg maxyp(y|x).\nRAG-Token The RAG-Token model can be seen as a standard, autoregressive seq2seq genera-\ntor w",
+        "source": "2005.11401v4.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "17f4d45c-f4c-0023",
+        "content_preview": "and to generate with tree search, guided by LM-generated value scores. While their value function\nsimply indicates an overall score of each generation, SELF -R AG trains to an arbitrary LM to learn to",
+        "source": "2310.11511v1.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 122.1,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 42508.7,
+    "timestamp": "2026-04-13T00:52:18.578914",
+    "latency_s": 44.58
+  },
+  {
+    "query_id": "eda5754f-1e86-46bf-ab34-ec9abb06d475",
+    "question": "What ablation results show the importance of Self-RAG's components?",
+    "answer": "Unfortunately, I couldn't find any information on ablation results showing the importance of Self-RAG's components in the provided context. The text only mentions that the performance of Self-RAG dropped significantly when LLMs were changed from SelfRAG-LLaMA2-7b to LLaMA2-hf-7b, and that CRAG does not require instruction-tuning using human or LLM annotated data.\n\nHowever, I can infer that the ablation results might be related to the comparison between Self-CRAG and other components of Self-RAG. Since the text mentions that Self-CRAG was designed by inserting CRAG into the Self-RAG framework, it is possible that the ablation results show the importance of CRAG's components in improving the performance of Self-CRAG.\n\nUnfortunately, I couldn't find any specific information on this topic in the provided context.",
+    "sources": [
+      {
+        "chunk_id": "144d23de-71e-0140",
+        "content_preview": "improvement of our method.\nSelf-CRAG: To demonstrate that our plug-and-\nplay approach can be utilized in other concurrent\nstudies, we specifically designed to insert our\nCRAG into the Self-RAG (Asai e",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "3d55308b-fe86-4bdf-801b-a5f95efb27a2",
+        "content_preview": "LLMs was changed from SelfRAG-LLaMA2-7b\nto LLaMA2-hf-7b, while the performance of Self-\nRAG dropped significantly, even underperforming\nthe standard RAG on several benchmarks. The\nreason for these res",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0159
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 162.9,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 83711.2,
+    "timestamp": "2026-04-13T00:53:44.386705",
+    "latency_s": 85.81
+  },
+  {
+    "query_id": "7896be6c-fd80-400a-be06-f7a29ea0ca85",
+    "question": "What is Corrective Retrieval Augmented Generation and why is it needed?",
+    "answer": "According to [Source 2: 2401.15884v3.pdf], Corrective Retrieval Augmented Generation (CRAG) is a proposed method to improve the robustness of generation in Large Language Models (LLMs). It aims to address the limitations of retrieval-augmented generation (RAG), which relies heavily on the relevance of retrieved documents.\n\nThe need for CRAG arises from the fact that RAG-based approaches can be challenged if retrieval goes wrong, leading to inaccurate and misleading knowledge being exposed to generative LLMs. This can result in hallucinations and decreased accuracy of generated texts.\n\nCRAG is proposed as a lightweight method to estimate and trigger three types of retrievals: [Source 2 does not specify the exact types]. The use of a lightweight retrieval evaluator is expected to incur only modest computational overhead while significantly enhancing performance, thereby validating its lightweight nature.",
+    "sources": [
+      {
+        "chunk_id": "144d23de-71e-0001",
+        "content_preview": "exhibit hallucinations since the accuracy of\ngenerated texts cannot be secured solely by\nthe parametric knowledge they encapsulate. Al-\nthough retrieval-augmented generation (RAG)\nis a practicable com",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-96634314",
+        "content_preview": "Entity: Corrective Retrieval Augmented Generation\nAbstract: Corrective Retrieval Augmented Generation\nShi-Qi Yan1*, Jia-Chen Gu2*, Yun Zhu3, Zhen-Hua Ling1\n1National Engineering Research Center of Spe",
+        "source": "2401.15884v3.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "8182f9fc-00bc-40df-a0e1-423f3372c359",
+        "content_preview": "Figure 1: The examples show that a low-quality retriever\nis prone to introducing a substantial amount of irrelevant\ninformation, impeding the generators from acquiring\naccurate knowledge and potential",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0087",
+        "content_preview": "nism incurs only modest computational overhead\nwhile significantly enhancing performance, thereby\nvalidating its lightweight nature.\n6 Conclusion & Limitation\nThis paper studies the problem where RAG-",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 156.5,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 60643.5,
+    "timestamp": "2026-04-13T00:54:47.095789",
+    "latency_s": 62.71
+  },
+  {
+    "query_id": "ee39e006-ce24-4b9b-a6c8-e0158bd7bca2",
+    "question": "How does CRAG's retrieval evaluator assess document quality?",
+    "answer": "According to [Source 3], CRAG's lightweight retrieval evaluator assesses the overall quality of retrieved documents for a query by quantifying a confidence degree, which is based on the relevance and reliability of the retrieved documents.",
+    "sources": [
+      {
+        "chunk_id": "466694a9-af15-4051-8b70-84d8293ddbb2",
+        "content_preview": "The quality of the retrieval evaluator significantly\ndetermined the performance of the entire system.\nGiven the document retrieval results, we assessed\nwhether the retrieval evaluator can accurately\nd",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0076",
+        "content_preview": "The quality of the retrieval evaluator significantly\ndetermined the performance of the entire system.\nGiven the document retrieval results, we assessed\nwhether the retrieval evaluator can accurately\nd",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "25cc7fe3-c718-4112-8458-25597bd56520",
+        "content_preview": "Generation ( CRAG ) is proposed to self-correct\nthe results of retriever and improve the utilization\nof documents for augmenting generation. A\nlightweight retrieval evaluator is designed to\nassess the",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0011",
+        "content_preview": "Generation ( CRAG ) is proposed to self-correct\nthe results of retriever and improve the utilization\nof documents for augmenting generation. A\nlightweight retrieval evaluator is designed to\nassess the",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 154.1,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 38502.7,
+    "timestamp": "2026-04-13T00:55:27.678662",
+    "latency_s": 40.58
+  },
+  {
+    "query_id": "9f8bf38d-9adc-4d5b-bdc1-859d68331d85",
+    "question": "What are the three action triggers in CRAG: Correct, Incorrect, and Ambiguous?",
+    "answer": "The question does not explicitly mention the three action triggers in CRAG. However, based on the provided context from [Source 1] and [Source 4], we can infer that there are at least two action triggers:\n\n1. Correct\n2. Incorrect\n\nThe third action trigger is mentioned as \"Ambiguous\", which is triggered when the accuracy of retrieval is hard to distinguish or when the evaluator gives an intermediate score.\n\nThere is no explicit mention of a third action trigger in the provided context, but it can be inferred that there are at least three triggers: Correct, Incorrect, and Ambiguous.",
+    "sources": [
+      {
+        "chunk_id": "547095cb-f673-4484-91d7-d601044756c3",
+        "content_preview": "elaborated in Section 4.5. This corrective action\nhelps overcome the embarrassing challenge where\nno reliable knowledge can be referred to.\nAmbiguous Except for the above two situations,\nthe remaining",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0071",
+        "content_preview": "triggered Correct or Incorrect would trigger\nAmbiguous. On the other hand, when the action\nAmbiguous was removed, there was only one\nthreshold against which all input queries clearly\ntriggered Correct",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "graph-51183220",
+        "content_preview": "Entity: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\nAbstract: BERT: Pre-training of Deep Bidirectional Transformers for\nLanguage Understanding\nJacob Devlin Ming-We",
+        "source": "1810.04805v2.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "d592005f-923c-4d25-82e5-4f816786dcb9",
+        "content_preview": "triggered Correct or Incorrect would trigger\nAmbiguous. On the other hand, when the action\nAmbiguous was removed, there was only one\nthreshold against which all input queries clearly\ntriggered Correct",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0070",
+        "content_preview": "ther verify the effectiveness of triggered actions\ndesigned in the retrieval evaluator, ablation tests\nfor removing each single action in the proposed\nmethod were conducted as shown in Table 2.\nEvalua",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 317.7,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 96904.6,
+    "timestamp": "2026-04-13T00:57:06.637314",
+    "latency_s": 98.96
+  },
+  {
+    "query_id": "224cafe7-2b9a-483d-9f45-3d31cedc4d79",
+    "question": "How does CRAG's knowledge refinement process work?",
+    "answer": "Unfortunately, the provided context only mentions the algorithm 1: CRAG Inference and its steps, but not the actual knowledge refinement process. The confidence calculation step (lines 2-3) seems to be related to evaluating the relevance of each pair (x, di), but it does not explicitly describe how the internal knowledge is refined.\n\nHowever, based on the title \"Learning To Retrieve, Generate, And Critique Through Self-Reflection\" and the authors' names, I can infer that the paper likely discusses a self-reflection mechanism for learning to refine knowledge. But this information is not provided in the context of algorithm 1: CRAG Inference.\n\nTherefore, I cannot provide a detailed answer on how CRAG's knowledge refinement process works based solely on the provided context.",
+    "sources": [
+      {
+        "chunk_id": "graph-64064515",
+        "content_preview": "Entity: Learning To Retrieve, Generate, And Critique Through Self-Reflection\nAbstract: Preprint.\nSELF -RAG: L EARNING TO RETRIEVE , G ENERATE , AND\nCRITIQUE THROUGH SELF -R EFLECTION\nAkari Asai\u2020, Zeqi",
+        "source": "2310.11511v1.pdf",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "a7e980a5-68ec-449d-a77a-56eb14989e9b",
+        "content_preview": "Algorithm 1: CRAG Inference\nRequire :E (Retrieval Evaluator), W (Query Rewriter), G (Generator)\nInput : x (Input question), D = {d1, d2, ..., dk} (Retrieved documents)\nOutput : y (Generated response)\n",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 149.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 95920.4,
+    "timestamp": "2026-04-13T00:58:44.632619",
+    "latency_s": 98.0
+  },
+  {
+    "query_id": "400d0584-5642-49ec-be7b-06a9de3340d2",
+    "question": "How does CRAG use web search as a knowledge correction strategy?",
+    "answer": "According to the provided context, CRAG uses Web Search as a knowledge correction strategy when the Confidence is [AMBIGUOUS]. Specifically, it involves rewriting the input x for searching using W, and then retrieving External_Knowledge from the web search. This process is stated in lines 9-11 of the code snippet.\n\n[Source N: The specific line numbers refer to the provided PDF document \"2401.15884v3.pdf\", but without access to the actual document, I can only provide a general answer based on the context.]",
+    "sources": [
+      {
+        "chunk_id": "144d23de-71e-0039",
+        "content_preview": "4 Internal_Knowledge = Knowledge_Refine(x, D)\n5 k = Internal_Knowledge\n6 else if Confidence == [INCORRECT] then\n7 External_Knowledge = Web_Search(W Rewrites x for searching)\n8 k = External_Knowledge\n9",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 150.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 79713.4,
+    "timestamp": "2026-04-13T01:00:06.439992",
+    "latency_s": 81.81
+  },
+  {
+    "query_id": "e615f9fa-d41f-4548-8b08-afa69c423259",
+    "question": "How does CRAG compare to Self-RAG on the PopQA dataset?",
+    "answer": "According to Table 5 in [Source 1], the comparison results between CRAG, Self-CRAG, and RAG, Self-RAG with the same input in terms of accuracy are as follows:\n\n* CRAG outperforms Self-RAG in terms of retrieval performance.\n* The exact numbers are not provided in the given context, but it is mentioned that CRAG has a higher accuracy than Self-RAG.\n\nNote: The comparison between CRAG and Self-RAG is only shown in Table 5, which does not provide explicit numbers for both models. However, based on the information provided, it can be inferred that CRAG outperforms Self-RAG in terms of retrieval performance.",
+    "sources": [
+      {
+        "chunk_id": "9b4f2dc8-5439-4e6b-b64c-f84415ad5b10",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0079",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "8cb71ec6-74ad-48d3-b5fb-b622d4e716e2",
+        "content_preview": "for this ability. As you can imagine, when more\nadvanced LLMs are available in the future, they\ncan be coupled withCRAG easily, while additional\ninstruction tuning is still necessary for Self-RAG.\nLLa",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 137.3,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 51377.4,
+    "timestamp": "2026-04-13T01:00:59.891079",
+    "latency_s": 53.45
+  },
+  {
+    "query_id": "4bf21fc0-5d1a-4803-900b-21784fba67de",
+    "question": "What is the decompose-then-recompose algorithm in CRAG?",
+    "answer": "I cannot provide a definition of the decompose-then-recompose algorithm as it is not explicitly stated in the provided context. However, based on the information given, I can tell you that the decompose-then-recompose algorithm is used in the Corrective Retrieval Augmented Generation (CRAG) method.\n\n[Source N]: knowledge_graph",
+    "sources": [
+      {
+        "chunk_id": "graph-59852456",
+        "content_preview": "Entity: decompose-then-recompose algorithm\n  \u2192 USES_METHOD \u2192 Paper: Corrective Retrieval Augmented Generation\n  \u2192 USES_METHOD \u2192 Author: Shi-Qi Yan\n  \u2192 USES_METHOD \u2192 Author: Jia-Chen Gu\n  \u2192 USES_METHOD",
+        "source": "knowledge_graph",
+        "retriever": "graph",
+        "relevance_score": 0.0164
+      }
+    ],
+    "crag_action_taken": "web_search",
+    "retrieval_time_ms": 162.5,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 69191.2,
+    "timestamp": "2026-04-13T01:02:11.166280",
+    "latency_s": 71.28
+  },
+  {
+    "query_id": "91fbfe9f-7865-4666-b48c-2ca1a918b5dc",
+    "question": "How robust is CRAG when retrieval quality degrades?",
+    "answer": "According to the provided context, it can be inferred that CRAG (Corrective RAG) is more robust than Self-RAG when retrieval quality degrades. This is because as the retrieval performance of Self-RAG dropped, its generation performance also dropped significantly, whereas the generation performance of CRAG dropped only slightly.\n\nThis implies that CRAG has a superior ability to maintain its generation performance even when the retrieval quality deteriorates, making it more robust in this scenario.",
+    "sources": [
+      {
+        "chunk_id": "92b8ef25-cd78-4a2b-a93c-e791c8c2cffb",
+        "content_preview": "that the generation performance of Self-RAG and\nSelf-CRAG dropped as the retrieval performance\ndropped, indicating that the generator relied heavily\non the quality of the retriever. Furthermore, as\nth",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0079",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "9b4f2dc8-5439-4e6b-b64c-f84415ad5b10",
+        "content_preview": "Self-RAG 29.0 54.9\nSelf-RAG w. web 24.9 57.9\nTable 5: Comparison results between CRAG , Self-\nCRAG and RAG, Self-RAG with the same input in\nterms of accuracy.\nretrieval performance. A part of accurate",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0055",
+        "content_preview": "The same metrics are used because our proposed\nmethod is comparable to previous studies, since\nwe used the same retrieval results as previous\nwork. The difference lies in that our motivation\nis to imp",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 146.1,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 51044.7,
+    "timestamp": "2026-04-13T01:03:04.295402",
+    "latency_s": 53.13
+  },
+  {
+    "query_id": "48ea76b5-991c-41b6-86b3-7ebc473b9bda",
+    "question": "What is the computational overhead of CRAG compared to standard RAG?",
+    "answer": "According to Table 6 in [Source 1], the computational overhead assessment of RAG, CRAG, Self-CRAG, and Self-RAG about FLOPs per token on GPUs and executing time per instance are:\n\n- RAG: 26.5 FLOPs, 0.363 seconds\n- CRAG: 27.2 FLOPs, 0.512 seconds\n\nThe difference in computational overhead between CRAG and standard RAG is the increase in both FLOPs (27.2 - 26.5 = 0.7) and executing time per instance (0.512 - 0.363 = 0.149 seconds).",
+    "sources": [
+      {
+        "chunk_id": "144d23de-71e-0082",
+        "content_preview": "TFLOPs per token executing time(s)\nRAG 26.5 0.363\nCRAG 27.2 0.512\nSelf-RAG 26.5 \u223c132.4 0.741\nSelf-CRAG 27.2 \u223c80.2 0.908\nTable 6: computational overhead assessment of RAG,\nCRAG , Self-CRAG, and Self-RA",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "cf82a92f-1780-4ebb-8c80-03040fe0a21d",
+        "content_preview": "Accuracy of retrieval\n20\n30\n40\n50\n60\n70Accuracy of generation\nno retrieval\nSelf-RAG Self-CRAG\nFigure 3: The generation performance of Self-RAG\nand Self-CRAG given different retrieval performance\non th",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0161
+      },
+      {
+        "chunk_id": "144d23de-71e-0078",
+        "content_preview": "Accuracy of retrieval\n20\n30\n40\n50\n60\n70Accuracy of generation\nno retrieval\nSelf-RAG Self-CRAG\nFigure 3: The generation performance of Self-RAG\nand Self-CRAG given different retrieval performance\non th",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 162.8,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 101849.2,
+    "timestamp": "2026-04-13T01:04:48.232960",
+    "latency_s": 103.94
+  },
+  {
+    "query_id": "d9795b0e-57bb-4103-a300-91457e298ba2",
+    "question": "How does CRAG's T5-based retrieval evaluator compare to ChatGPT for evaluating retrieval?",
+    "answer": "According to the provided context, CRAG's T5-based retrieval evaluator significantly outperformed ChatGPT in all settings. Specifically, on the PopQA dataset:\n\n* The accuracy of the T5-based retrieval evaluator was 84.3\n* The accuracy of ChatGPT was 58.0\n* The accuracy of ChatGPT-CoT and ChatGPT-few-shot were 62.4 and 64.7, respectively.\n\nTherefore, CRAG's T5-based retrieval evaluator outperformed ChatGPT by a margin of 26.3 points in terms of accuracy on the PopQA dataset.",
+    "sources": [
+      {
+        "chunk_id": "ea979870-1182-44e5-a6f8-553412ead302",
+        "content_preview": "ChatGPT-CoT, and ChatGPT-few-shot used in our\nexperiments can be referred to in Appendix A.\nResults reveal that the lightweight T5-based re-\ntrieval evaluator significantly outperformed the\ncompetitiv",
+        "source": "2401.15884v3.pdf",
+        "retriever": "dense",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0073",
+        "content_preview": "Accuracy\nOur Retrieval Evaluator (T5-based) 84.3\nChatGPT 58.0\nChatGPT-CoT 62.4\nChatGPT-few-shot 64.7\nTable 4: Evaluation of our retrieval evaluator and\nChatGPT for the retrieval results on the PopQA d",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0164
+      },
+      {
+        "chunk_id": "144d23de-71e-0077",
+        "content_preview": "ChatGPT-CoT, and ChatGPT-few-shot used in our\nexperiments can be referred to in Appendix A.\nResults reveal that the lightweight T5-based re-\ntrieval evaluator significantly outperformed the\ncompetitiv",
+        "source": "2401.15884v3.pdf",
+        "retriever": "sparse",
+        "relevance_score": 0.0161
+      }
+    ],
+    "crag_action_taken": "proceed",
+    "retrieval_time_ms": 147.0,
+    "generation_time_ms": 0.0,
+    "total_time_ms": 51538.8,
+    "timestamp": "2026-04-13T01:05:41.852048",
+    "latency_s": 53.62
+  }
+]
