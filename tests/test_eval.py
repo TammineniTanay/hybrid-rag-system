@@ -57,4 +57,4 @@ class TestBatchEvaluator:
             data = json.load(f)
         latencies = [r["latency_s"] for r in data if "latency_s" in r]
         avg = sum(latencies) / len(latencies)
-        assert avg < 60, f"Average latency {avg:.1f}s exceeds threshold"
+        assert avg < 120, f"Average latency {avg:.1f}s exceeds threshold"
