@@ -17,10 +17,8 @@ The model retrains periodically (via a cron job or manual trigger)
 as new feedback accumulates.
 """
 
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.model_selection import cross_val_score
-from sentence_transformers import SentenceTransformer
-import numpy as np
+from sklearn.ensemble import GradientBoostingClassifier  # Scikit-learn GradientBoostingClassifier for reward model trainingfrom sklearn.model_selection import cross_val_score
+from sentence_transformers import SentenceTransformer  # sentence-transformers for embedding generationimport numpy as np
 import joblib
 import os
 import structlog
